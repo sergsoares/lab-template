@@ -1,0 +1,21 @@
+---
+- hosts: all
+  become: yes
+
+  tasks:
+    - name: Creates directory
+      file:
+        path: /opt/arkade-0.8.14 #TODO: use variable
+        state: directory
+    
+    - name: Download binary
+      get_url:
+        url: "https://github.com/alexellis/arkade/releases/download/0.8.14/arkade" #TODO: use variable
+        dest: "/opt/arkade-0.8.14/arkade" #TODO: use variable
+
+    - name: Create in usr files
+      become: yes
+      ansible.builtin.copy:
+        src: "/opt/arkade-0.8.14/arkade"
+        dest: "/usr/local/bin/arkade"
+        mode: '755'

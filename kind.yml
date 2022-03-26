@@ -1,0 +1,21 @@
+---
+- hosts: all
+  become: yes
+
+  tasks:
+    - name: Creates directory
+      file:
+        path: /opt/kind-v0.12.0 #TODO: use variable
+        state: directory
+    
+    - name: Download kind binary
+      get_url:
+        url: "https://kind.sigs.k8s.io/dl/v0.12.0/kind-linux-amd64" #TODO: use variable
+        dest: "/opt/kind-v0.12.0/kind-linux-amd64" #TODO: use variable
+
+    - name: Backpup openbox files
+      become: yes
+      ansible.builtin.copy:
+        src: "/opt/kind-v0.12.0/kind-linux-amd64"
+        dest: "/usr/local/bin/kind"
+        mode: '755'
