@@ -9,6 +9,10 @@ Install initial dependencies as ansible and galaxy roles
 $ bash scripts/setup
 ```
 
+Install all ansible modules available
+```
+$ bash scripts/setup
+```
 
 ===
 
