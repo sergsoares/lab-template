@@ -13,7 +13,7 @@
         - vim
         - curl
         - unzip
-        - fish
+        # - fish
         - falkon
         - rofi
         - docker

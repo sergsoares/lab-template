@@ -1,1 +1,1 @@
-ansible-playbook -c local -i localhost, "${1}.yml"
+ansible-playbook -c local -i localhost, "${1}"

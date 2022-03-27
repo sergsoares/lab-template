@@ -1,0 +1,29 @@
+---
+- hosts: all
+  become: yes
+
+  tasks:
+    - name: Install fish shell
+      apt:
+        name: "{{ item }}"
+        update_cache: yes
+      loop:
+        - fish
+
+    - name: Copy configuration for fish
+      become: no
+      ansible.builtin.copy:
+        src: ./fish/.config/
+        dest: ~/.config/
+
+- name: set up fish for user
+  hosts: localhost
+  become: no
+  vars:
+    the_user: "{{ ansible_user_id }}"
+  tasks:
+    - name: change user shell to fish 
+      become: yes
+      user:
+        name: "{{ the_user }}"
+        shell: /usr/bin/fish
