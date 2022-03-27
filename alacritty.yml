@@ -1,0 +1,15 @@
+---
+- hosts: all
+  become: yes
+
+  tasks:        
+    - name: Add alacritty ppa
+      ansible.builtin.apt_repository:
+        repo: ppa:aslatter/ppa
+
+    - name: Install alacritty
+      apt:
+        name: "{{ item }}"
+        update_cache: yes
+      loop:
+        - alacritty
