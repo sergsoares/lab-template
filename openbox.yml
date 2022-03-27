@@ -3,18 +3,22 @@
   become: yes
 
   tasks:
-    - name: Backpup openbox files
+    - name: Copy configuration for openbox
       become: no
-      ansible.builtin.copy:
-        src: ~/.config/openbox/lxqt-rc.xml 
-        dest: ~/.config/openbox/lxqt-rc-bkp.xml
-        mode: '0644'
+      shell: stow --stow conf-openbox --target ~/.config/openbox --adopt
+
+    # - name: Backpup openbox files
+    #   become: no
+    #   ansible.builtin.copy:
+    #     src: ~/.config/openbox/lxqt-rc.xml 
+    #     dest: ~/.config/openbox/lxqt-rc-bkp.xml
+    #     mode: '0644'
 
 
-    - name: Download lxqt-rc.xml
-      become: no
-      get_url:
-        url: https://gist.githubusercontent.com/sergsoares/89f085f6a6b34a40741dbf2aae54932b/raw/11e73608f02613483bd02a77675f5b414c77570e/lxqt-rc.xml
-        dest: ~/.config/openbox/lxqt-rc.xml
-        mode: '0644'
+    # - name: Download lxqt-rc.xml
+    #   become: no
+    #   get_url:
+    #     url: https://gist.githubusercontent.com/sergsoares/89f085f6a6b34a40741dbf2aae54932b/raw/11e73608f02613483bd02a77675f5b414c77570e/lxqt-rc.xml
+    #     dest: ~/.config/openbox/lxqt-rc.xml
+    #     mode: '0644'
 
