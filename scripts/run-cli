@@ -1,0 +1,2 @@
+bash scripts/run arkade.yml
+bash scripts/run kind.yml

@@ -1,0 +1,4 @@
+
+bash scripts/run base.yml
+bash scripts/run fish.yml
+

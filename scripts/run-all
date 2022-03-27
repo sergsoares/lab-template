@@ -1,8 +1,3 @@
-bash scripts/run base
-
-bash scripts/run arkade
-bash scripts/run kind
-bash scripts/run lens
-bash scripts/run openbox
-bash scripts/run vscode
-bash scripts/run alacritty
+bash scripts/run-essential
+bash scripts/run-cli
+bash scripts/run-gui
