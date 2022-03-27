@@ -1,3 +1,4 @@
 sudo apt install -y ansible
+sudo apt install -y stow
 ansible-galaxy install gantsign.visual-studio-code
 ansible-galaxy install darkwizard242.lens

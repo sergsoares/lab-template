@@ -9,12 +9,15 @@
         update_cache: yes
       loop:
         - fish
-
+    
     - name: Copy configuration for fish
       become: no
-      ansible.builtin.copy:
-        src: ./fish/.config/
-        dest: ~/.config/
+      shell: stow --stow conf-fish --target /home/test --adopt
+    # - name: Copy configuration for fish
+    #   become: no
+    #   ansible.builtin.copy:
+    #     src: ./fish/.config/
+    #     dest: ~/.config/
 
 - name: set up fish for user
   hosts: localhost
