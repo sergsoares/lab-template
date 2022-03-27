@@ -1,0 +1,18 @@
+---
+- hosts: all
+  become: yes
+
+  tasks:
+    - name: Creates directory
+      file:
+        path: /opt/teams_1.4.00.26453_amd64 #TODO: use variable
+        state: directory
+    
+    - name: Download teams binary
+      get_url:
+        url: "https://packages.microsoft.com/repos/ms-teams/pool/main/t/teams/teams_1.4.00.26453_amd64.deb" #TODO: use variable
+        dest: "/opt/teams_1.4.00.26453_amd64/teams_1.4.00.26453_amd64.deb" #TODO: use variable
+
+    - name: Install teams
+      apt:
+        deb: /opt/teams_1.4.00.26453_amd64/teams_1.4.00.26453_amd64.deb

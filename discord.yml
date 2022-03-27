@@ -1,0 +1,18 @@
+---
+- hosts: all
+  become: yes
+
+  tasks:
+    - name: Creates directory
+      file:
+        path: /opt/discord-0.0.17 #TODO: use variable
+        state: directory
+    
+    - name: Download discord binary
+      get_url:
+        url: "https://dl.discordapp.net/apps/linux/0.0.17/discord-0.0.17.deb" #TODO: use variable
+        dest: "/opt/discord-0.0.17/discord-0.0.17.deb" #TODO: use variable
+
+    - name: Install Discord
+      apt:
+        deb: /opt/discord-0.0.17/discord-0.0.17.deb

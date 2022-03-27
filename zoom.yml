@@ -1,0 +1,18 @@
+---
+- hosts: all
+  become: yes
+
+  tasks:
+    - name: Creates directory
+      file:
+        path: /opt/zoom_amd64-5-10-0-2450 #TODO: use variable
+        state: directory
+    
+    - name: Download Zoom binary
+      get_url:
+        url: "https://cdn.zoom.us/prod/5.10.0.2450/zoom_amd64.deb" #TODO: use variable
+        dest: "/opt/zoom_amd64-5-10-0-2450/zoom_amd64-5-10-0-2450.deb" #TODO: use variable
+
+    - name: Install Zoom
+      apt:
+        deb: /opt/zoom_amd64-5-10-0-2450/zoom_amd64-5-10-0-2450.deb

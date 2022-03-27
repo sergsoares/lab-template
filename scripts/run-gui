@@ -1,0 +1,7 @@
+bash scripts/run openbox.yml
+bash scripts/run vscode.yml
+bash scripts/run discord.yml
+bash scripts/run teams.yml
+bash scripts/run zoom.yml
+bash scripts/run lens.yml
+bash scripts/run alacritty.yml
