@@ -13,7 +13,3 @@
         - curl
         - git
         - unzip
-        - fzf
-        - falkon
-        - rofi
-        - docker
