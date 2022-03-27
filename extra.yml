@@ -8,11 +8,6 @@
         name: "{{ item }}"
         update_cache: yes
       loop:
-        - make
-        - vim
-        - curl
-        - git
-        - unzip
         - fzf
         - falkon
         - rofi
