@@ -9,9 +9,21 @@ Install initial dependencies as ansible and galaxy roles
 $ bash scripts/setup
 ```
 
-Install all ansible modules available
+Then it is possible run 3 Modes (essential, gui, cli)
 ```
-$ bash scripts/setup
+Install all ansible modules available
+$ bash scripts/run-all
+
+Install all only essential modules available
+$ bash scripts/run-essential
+
+Install all only CLI modules available
+$ bash scripts/run-cli
+
+Install all only  GUI modules available
+$ bash scripts/run-gui
+
+
 ```
 
 ===
