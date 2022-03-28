@@ -1,0 +1,18 @@
+---
+- hosts: all
+  become: yes
+
+  tasks:
+    - name: Creates directory
+      file:
+        path: /opt/slack-desktop-4.24.0-amd64 #TODO: use variable
+        state: directory
+    
+    - name: Download slack binary
+      get_url:
+        url: "https://downloads.slack-edge.com/releases/linux/4.24.0/prod/x64/slack-desktop-4.24.0-amd64.deb" #TODO: use variable
+        dest: "/opt/slack-desktop-4.24.0-amd64/slack-desktop-4.24.0-amd64.deb" #TODO: use variable
+
+    - name: Install slack
+      apt:
+        deb: /opt/slack-desktop-4.24.0-amd64/slack-desktop-4.24.0-amd64.deb
