@@ -1,0 +1,18 @@
+---
+- hosts: all
+  become: yes
+
+  tasks:
+    - name: Creates directory
+      file:
+        path: /opt/google-chrome-stable_current_amd64 #TODO: use variable
+        state: directory
+    
+    - name: Download discord binary
+      get_url:
+        url: "https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb" #TODO: use variable
+        dest: "/opt/google-chrome-stable_current_amd64/google-chrome-stable_current_amd64.deb" #TODO: use variable
+
+    - name: Install Discord
+      apt:
+        deb: /opt/google-chrome-stable_current_amd64/google-chrome-stable_current_amd64.deb
