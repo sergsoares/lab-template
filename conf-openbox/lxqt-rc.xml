@@ -190,6 +190,16 @@
         <command>xdotool key a</command>
       </action>
     </keybind>
+    <keybind key="C-S-space">
+      <action name="Execute">
+        <command>rofi -show run</command>
+      </action>
+    </keybind>
+        <keybind key="S-space">
+      <action name="Execute">
+        <command>rofi -show</command>
+      </action>
+    </keybind>
     <chainQuitKey>C-g</chainQuitKey>
     <!-- Keybindings for desktop switching -->
     <keybind key="C-A-Left">
