@@ -4,9 +4,9 @@ Ansible scripts to initialize a Lab machine.
 
 ===
 
-Install initial dependencies as ansible and galaxy roles
+Single script to install in a new instance.
 ```
-$ bash scripts/setup
+git clone https://github.com/sergsoares/lab-template --depth=1;cd lab-template;sudo bash scripts/run-all
 ```
 
 Then it is possible run 3 Modes (essential, gui, cli)

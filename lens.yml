@@ -1,5 +1,18 @@
 ---
 - hosts: all
   become: yes
-  roles:
-    - role: darkwizard242.lens
+
+  tasks:
+    - name: Creates directory
+      file:
+        path: /opt/Lens-5.4.4-latest.20220325.1.amd64 #TODO: use variable
+        state: directory
+    
+    - name: Download Lens binary
+      get_url:
+        url: "https://lens-binaries.s3-eu-west-1.amazonaws.com/ide/Lens-5.4.4-latest.20220325.1.amd64.deb" #TODO: use variable
+        dest: "/opt/Lens-5.4.4-latest.20220325.1.amd64/Lens-5.4.4-latest.20220325.1.amd64.deb" #TODO: use variable
+
+    - name: Install Lens
+      apt:
+        deb: /opt/Lens-5.4.4-latest.20220325.1.amd64/Lens-5.4.4-latest.20220325.1.amd64.deb

@@ -1,3 +1,4 @@
+bash scripts/setup
 bash scripts/run-essential
 bash scripts/run-cli
 bash scripts/run-gui
