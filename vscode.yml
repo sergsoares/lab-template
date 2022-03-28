@@ -1,5 +1,18 @@
 ---
 - hosts: all
   become: yes
-  roles:
-    - role: gantsign.visual-studio-code
+
+  tasks:
+    - name: Creates directory
+      file:
+        path: /opt/code_1.65.2-1646927742_amd64 #TODO: use variable
+        state: directory
+    
+    - name: Download Visual Studio Code binary
+      get_url:
+        url: "https://az764295.vo.msecnd.net/stable/c722ca6c7eed3d7987c0d5c3df5c45f6b15e77d1/code_1.65.2-1646927742_amd64.deb" #TODO: use variable
+        dest: "/opt/code_1.65.2-1646927742_amd64/code_1.65.2-1646927742_amd64.deb" #TODO: use variable
+
+    - name: Install Visual Studio Code
+      apt:
+        deb: /opt/code_1.65.2-1646927742_amd64/code_1.65.2-1646927742_amd64.deb
