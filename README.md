@@ -30,6 +30,4 @@ $ bash scripts/run-gui
 
 ## Todo
 
-- Add brave
-- Add Sublime Package
 - Fix "ansible-galaxy install -r requirements.yml" usage
