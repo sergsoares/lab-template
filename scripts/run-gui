@@ -9,3 +9,4 @@ bash scripts/run chrome.yml
 
 bash scripts/run dbeaver-ce.yml
 bash scripts/run sublime.yml
+bash scripts/run aws-vpn.yml

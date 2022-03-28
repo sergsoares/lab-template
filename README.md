@@ -31,3 +31,7 @@ $ bash scripts/run-gui
 ## Todo
 
 - Fix "ansible-galaxy install -r requirements.yml" usage
+- Retry for binary downloads
+- Fix Chrome Version
+- Added Chromium
+

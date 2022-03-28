@@ -1,0 +1,27 @@
+---
+- hosts: all
+  become: yes
+
+  tasks:
+    - name: Add an Apt signing key, uses whichever key is at the URL
+      ansible.builtin.apt_key:
+        url: https://d20adtppz83p9s.cloudfront.net/GTK/latest/debian-repo/awsvpnclient_public_key.asc
+        state: present
+
+    - name: Add Aws VPN repository to list of repositories
+      shell: |
+        set -o pipefail
+        echo "deb [arch=amd64] https://d20adtppz83p9s.cloudfront.net/GTK/latest/debian-repo ubuntu-20.04 main" | sudo tee /etc/apt/sources.list.d/aws-vpn-client.list
+        creates=/etc/apt/sources.list.d/aws-vpn-client.list
+      args:
+        executable: /bin/bash
+
+    - name: Update apt cache
+      apt: update_cache=yes
+      become: true
+
+    - name: Install Aws VPN
+      apt:
+        name: awsvpnclient
+        state: present
+      become: true
