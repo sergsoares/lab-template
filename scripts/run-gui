@@ -6,3 +6,6 @@ bash scripts/run zoom.yml
 bash scripts/run lens.yml
 bash scripts/run alacritty.yml
 bash scripts/run chrome.yml
+
+bash scripts/run dbeaver-ce.yml
+bash scripts/run sublime.yml
