@@ -13,3 +13,4 @@
         - curl
         - git
         - unzip
+        - apt-transport-https
