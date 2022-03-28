@@ -12,7 +12,7 @@
     
     - name: Copy configuration for fish
       become: no
-      shell: stow --stow conf-fish --target /home/test --adopt
+      shell: stow --stow conf-fish --target ~ --adopt
     # - name: Copy configuration for fish
     #   become: no
     #   ansible.builtin.copy:
