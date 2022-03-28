@@ -5,3 +5,4 @@ bash scripts/run teams.yml
 bash scripts/run zoom.yml
 bash scripts/run lens.yml
 bash scripts/run alacritty.yml
+bash scripts/run chrome.yml
