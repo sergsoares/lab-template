@@ -23,6 +23,7 @@ alias gd='git diff'
 alias v='vagrant'
 alias ed='code ~/.dotfiles'
 
+alias l=lazygit
 
 # Issue that work for add path for Fish Shell
 # https://github.com/fish-shell/fish-shell/issues/527

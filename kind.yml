@@ -13,7 +13,7 @@
         url: "https://kind.sigs.k8s.io/dl/v0.12.0/kind-linux-amd64" #TODO: use variable
         dest: "/opt/kind-v0.12.0/kind-linux-amd64" #TODO: use variable
 
-    - name: Backpup openbox files
+    - name: Install kind binary
       become: yes
       ansible.builtin.copy:
         src: "/opt/kind-v0.12.0/kind-linux-amd64"

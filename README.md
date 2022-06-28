@@ -4,6 +4,12 @@ Ansible scripts to initialize a Lab machine.
 
 ===
 
+Prepara the environment with dependecies
+```
+bash scripts/setup
+```
+
+
 Single script to install in a new instance.
 ```
 git clone https://github.com/sergsoares/lab-template;cd lab-template;sudo bash scripts/run-all
